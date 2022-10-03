@@ -1,11 +1,11 @@
+using Domain.UnitOfWork;
+using Infrastructure;
+using Infrastructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
-using UnitOfWorkWithRepositoryPattern.Context;
-using UnitOfWorkWithRepositoryPattern.GenericRepository;
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

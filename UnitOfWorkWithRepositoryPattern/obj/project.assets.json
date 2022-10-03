@@ -970,6 +970,30 @@
             "rid": "win"
           }
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2422,10 +2446,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Domain >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.8",
@@ -2440,11 +2476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\New folder\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern.csproj",
+      "projectUniqueName": "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern.csproj",
       "projectName": "UnitOfWorkWithRepositoryPattern",
-      "projectPath": "E:\\New folder\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern.csproj",
+      "projectPath": "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern.csproj",
       "packagesPath": "C:\\Users\\neamu\\.nuget\\packages\\",
-      "outputPath": "E:\\New folder\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern\\obj\\",
+      "outputPath": "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\UnitOfWorkWithRepositoryPattern\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\neamu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2460,7 +2496,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\Domain\\Domain.csproj": {
+              "projectPath": "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\Domain\\Domain.csproj"
+            },
+            "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\Infrastructure\\Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B/k/s9YLlJDVDFMNWjlXi8t6bfDjwx4e0PptyzJdasjm7a7zyR8EgMnQJEXLEcNOljXuQm13MM7W/zsXpwKRsA==",
+  "dgSpecHash": "ZnUN4HC64YHNbMCPjGw5iTfS1eDGLtJXYudsY5JaPYNdIp7tpiMG04VYbM+jWl+hXwkvTcM0znOXeKXM/sLYkg==",
   "success": true,
-  "projectFilePath": "E:\\New folder\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern.csproj",
+  "projectFilePath": "E:\\New folder\\Unit-Of-Work-With-Repository-Pattern-In-.net-6\\UnitOfWorkWithRepositoryPattern\\UnitOfWorkWithRepositoryPattern.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neamu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\neamu\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.8\\microsoft.aspnetcore.cryptography.internal.6.0.8.nupkg.sha512",
