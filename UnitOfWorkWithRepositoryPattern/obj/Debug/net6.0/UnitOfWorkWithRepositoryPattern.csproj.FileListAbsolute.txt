@@ -136,3 +136,5 @@ E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\UnitOfWorkWithRepos
 E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\UnitOfWorkWithRepositoryPattern\bin\Debug\net6.0\Infrastructure.dll
 E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\UnitOfWorkWithRepositoryPattern\bin\Debug\net6.0\Domain.pdb
 E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\UnitOfWorkWithRepositoryPattern\bin\Debug\net6.0\Infrastructure.pdb
+E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\UnitOfWorkWithRepositoryPattern\bin\Debug\net6.0\AutoMapper.dll
+E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\UnitOfWorkWithRepositoryPattern\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

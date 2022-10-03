@@ -9,8 +9,8 @@ namespace UnitOfWorkWithRepositoryPattern.Services
     public interface ICategoryService
     {
         public Task<IEnumerable<Category>> GetAll();
-        public Task<Category> AddAccount(CategoryCreated model);
-        public Task<bool> UpdateAccount(Guid id, CategoryUpdate model);
+        public Task<Category> AddAccount(Category model);
+        public Task<bool> UpdateAccount(Guid id, Category model);
         public Task<bool> DeleteAccount(Guid id);
         public Task<Category> GetAsync(Guid accountId);
     }
@@ -21,12 +21,13 @@ namespace UnitOfWorkWithRepositoryPattern.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<Category> AddAccount(CategoryCreated model)
+        public async Task<Category> AddAccount(Category model)
         {
             try
             {
                 var account = new Category
                 {
+                    Id=Guid.NewGuid(),
                     Name = model.Name,
                   
                     CreatedDate = DateTime.Now,
@@ -72,7 +73,7 @@ namespace UnitOfWorkWithRepositoryPattern.Services
             return (await _unitOfWork.CategoryRepository.GetAsync(a => a.Id == id));
         }
 
-        public async Task<bool> UpdateAccount(Guid id, CategoryUpdate model)
+        public async Task<bool> UpdateAccount(Guid id, Category model)
         {
             try
             {

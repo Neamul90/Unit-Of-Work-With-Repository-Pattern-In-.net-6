@@ -13,3 +13,5 @@ E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\Infrastructure\obj\
 E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
 E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+E:\New folder\Unit-Of-Work-With-Repository-Pattern-In-.net-6\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
