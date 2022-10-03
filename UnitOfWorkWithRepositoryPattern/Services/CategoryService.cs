@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.UnitOfWork;
 using System.Security.Principal;
+using UnitOfWorkWithRepositoryPattern.DTOS;
 
 namespace UnitOfWorkWithRepositoryPattern.Services
 {
@@ -8,8 +9,8 @@ namespace UnitOfWorkWithRepositoryPattern.Services
     public interface ICategoryService
     {
         public Task<IEnumerable<Category>> GetAll();
-        public Task<Category> AddAccount(AccountCreated model);
-        public Task<bool> UpdateAccount(Guid id, AccountUpdate model);
+        public Task<Category> AddAccount(CategoryCreated model);
+        public Task<bool> UpdateAccount(Guid id, CategoryUpdate model);
         public Task<bool> DeleteAccount(Guid id);
         public Task<Category> GetAsync(Guid accountId);
     }
@@ -20,20 +21,19 @@ namespace UnitOfWorkWithRepositoryPattern.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<Account> AddAccount(AccountCreated model)
+        public async Task<Category> AddAccount(CategoryCreated model)
         {
             try
             {
-                var account = new Account
+                var account = new Category
                 {
                     Name = model.Name,
-                    ParentAccountId = model.ParentAccountId,
+                  
                     CreatedDate = DateTime.Now,
                     CreatedBy = "1",
-                    IsSystemCreated = false,
                     Status = "Active"
                 };
-                _unitOfWork.AccountRepository.Add(account);
+                _unitOfWork.CategoryRepository.Add(account);
                 await _unitOfWork.CommitAsync();
                 return account;
             }
@@ -47,12 +47,12 @@ namespace UnitOfWorkWithRepositoryPattern.Services
         {
             try
             {
-                var existAccount = _unitOfWork.AccountRepository.Get(a => a.Id == id);
+                var existAccount = _unitOfWork.CategoryRepository.Get(a => a.Id == id);
                 if (existAccount == null)
                     return false;
                 existAccount.Status = "Deleted";
                 existAccount.ModifiedDate = DateTime.Now;
-                _unitOfWork.AccountRepository.Update(existAccount);
+                _unitOfWork.CategoryRepository.Update(existAccount);
                 await _unitOfWork.CommitAsync();
                 return true;
             }
@@ -62,27 +62,26 @@ namespace UnitOfWorkWithRepositoryPattern.Services
             }
         }
 
-        public async Task<IEnumerable<Account>> GetAll()
+        public async Task<IEnumerable<Category>> GetAll()
         {
-            return await _unitOfWork.AccountRepository.GetAllAsync(a => a.Status == "Active");
+            return await _unitOfWork.CategoryRepository.GetAllAsync(a => a.Status == "Active");
         }
 
-        public async Task<Account> GetAsync(Guid accountId)
+        public async Task<Category> GetAsync(Guid id)
         {
-            return (await _unitOfWork.AccountRepository.GetAsync(a => a.Id == accountId));
+            return (await _unitOfWork.CategoryRepository.GetAsync(a => a.Id == id));
         }
 
-        public async Task<bool> UpdateAccount(Guid id, AccountUpdate model)
+        public async Task<bool> UpdateAccount(Guid id, CategoryUpdate model)
         {
             try
             {
-                var existAccount = _unitOfWork.AccountRepository.Get(a => a.Id == id);
+                var existAccount = _unitOfWork.CategoryRepository.Get(a => a.Id == id);
                 if (existAccount == null)
                     return false;
-                existAccount.ParentAccountId = model.ParentAccountId;
                 existAccount.Name = model.Name;
                 existAccount.ModifiedDate = DateTime.Now;
-                _unitOfWork.AccountRepository.Update(existAccount);
+                _unitOfWork.CategoryRepository.Update(existAccount);
                 await _unitOfWork.CommitAsync();
                 return true;
             }
